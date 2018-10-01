@@ -26,51 +26,25 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <Math/skVec2.hpp>
-#include <math.h>
+#include <Collision/CollisionTests.hpp>
 
 namespace shark
 {
-	skVec2::skVec2(float x) :
-	x(x),
-	y(x)
+	bool CollisionTests::boxvsBox(skBox a, skBox b)
 	{
+		// No intersection found as corners are separated along an axis
+		if (a.max.x < b.min.x || a.min.x > b.max.x) return false;
+		if (a.max.y < b.min.y || a.min.y > b.max.y) return false;
+
+		// Atleast one overlapping axis
+		return true;
 	}
 
-	skVec2::skVec2(float x, float y) :
-	x(x),
-	y(y)
+	bool CollisionTests::circlevsCircle(skCircle a, skCircle b)
 	{
-	}
-
-	skVec2::skVec2() :
-	x(0.f),
-	y(0.f)
-	{
-	}
-
-	float skVec2::length() const
-	{
-		return sqrtf(x * x + y * y);
-	}
-
-	float skVec2::lengthSquared() const
-	{
-		return x * x + y * y;
-	}
-
-	float skVec2::distance(const skVec2 & v) const
-	{
-		return sqrtf(((x - v.x) * (x - v.x)) + ((y - v.y) * (y - v.y)));
-	}
-
-	float skVec2::distanceSquared(const skVec2 & v) const
-	{
-		return ((x - v.x) * (x - v.x)) + ((y - v.y) * (y - v.y));
-	}
-
-	float skVec2::dot(const skVec2 & v) const
-	{
-		return x * v.x + y * v.y;
+		float r = a.radius + b.radius;
+		r *= r;
+		return r < ((a.position.x + b.position.x) * (a.position.x + b.position.x)) + 
+				   ((a.position.y + b.position.y) + (a.position.y + b.position.y));
 	}
 }

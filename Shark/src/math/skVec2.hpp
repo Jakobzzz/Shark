@@ -36,6 +36,13 @@ namespace shark
 		~skVec2() = default;
 
 	public:
+		float length() const;
+		float lengthSquared() const;
+		float distance(const skVec2& v) const;
+		float distanceSquared(const skVec2& v) const;
+		float dot(const skVec2& v) const;
+
+	public:
 		// Assignments and equality operations
 		inline skVec2& operator= (const skVec2& rhs) { x = rhs.x; y = rhs.y; return *this; }
 		inline skVec2& operator= (const float& f) { x = f; y = f; return *this; }
