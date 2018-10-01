@@ -8,9 +8,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\math\skVec2.cpp" />
+    <ClCompile Include="src\Math\skVec2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\math\skVec2.hpp" />
+    <ClInclude Include="src\Math\skVec2.hpp" />
   </ItemGroup>
 </Project>
