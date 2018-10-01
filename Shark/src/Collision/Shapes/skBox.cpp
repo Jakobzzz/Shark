@@ -26,25 +26,19 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <Math/skVec2.hpp>
+#include <Collision/Shapes/skBox.hpp>
 
 namespace shark
 {
-	skVec2::skVec2(float x) :
-	x(x),
-	y(x)
+	skBox::skBox(const skVec2& min, const skVec2& max) :
+	min(min),
+	max(max)
 	{
 	}
 
-	skVec2::skVec2(float x, float y) :
-	x(x),
-	y(y)
-	{
-	}
-
-	skVec2::skVec2() :
-	x(0.f),
-	y(0.f)
+	skBox::skBox() :
+	min(0.f),
+	max(0.f)
 	{
 	}
 }

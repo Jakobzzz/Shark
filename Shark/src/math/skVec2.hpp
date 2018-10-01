@@ -30,8 +30,9 @@ namespace shark
 	class skVec2
 	{
 	public:
-		skVec2();
+		explicit skVec2(float x);
 		explicit skVec2(float x, float y);
+		skVec2();
 		~skVec2() = default;
 
 	public:

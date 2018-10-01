@@ -23,6 +23,8 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+#pragma once
+
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
@@ -30,21 +32,15 @@
 
 namespace shark
 {
-	skVec2::skVec2(float x) :
-	x(x),
-	y(x)
+	class skCircle
 	{
-	}
+	public:
+		explicit skCircle(const skVec2& position, float radius);
+		skCircle();
+		~skCircle() = default;
 
-	skVec2::skVec2(float x, float y) :
-	x(x),
-	y(y)
-	{
-	}
-
-	skVec2::skVec2() :
-	x(0.f),
-	y(0.f)
-	{
-	}
+	public:
+		skVec2 position;
+		float radius;
+	};
 }

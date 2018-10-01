@@ -26,25 +26,19 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <Math/skVec2.hpp>
+#include <Collision/Shapes/skCircle.hpp>
 
 namespace shark
 {
-	skVec2::skVec2(float x) :
-	x(x),
-	y(x)
+	skCircle::skCircle(const skVec2& position, float radius) :
+	position(position),
+	radius(radius)
 	{
 	}
 
-	skVec2::skVec2(float x, float y) :
-	x(x),
-	y(y)
-	{
-	}
-
-	skVec2::skVec2() :
-	x(0.f),
-	y(0.f)
+	skCircle::skCircle() :
+	position(0.f),
+	radius(0.f)
 	{
 	}
 }

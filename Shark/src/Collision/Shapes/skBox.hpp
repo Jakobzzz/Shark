@@ -23,6 +23,8 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+#pragma once
+
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
@@ -30,21 +32,16 @@
 
 namespace shark
 {
-	skVec2::skVec2(float x) :
-	x(x),
-	y(x)
+	class skBox
 	{
-	}
+	public:
+		explicit skBox(const skVec2& min, const skVec2& max);
+		skBox();
+		~skBox() = default;
 
-	skVec2::skVec2(float x, float y) :
-	x(x),
-	y(y)
-	{
-	}
-
-	skVec2::skVec2() :
-	x(0.f),
-	y(0.f)
-	{
-	}
+	public:
+		skVec2 min;
+		skVec2 max;
+	};
 }
+

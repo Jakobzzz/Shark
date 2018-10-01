@@ -9,8 +9,12 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Math\skVec2.cpp" />
+    <ClCompile Include="src\Collision\Shapes\skBox.cpp" />
+    <ClCompile Include="src\Collision\Shapes\skCircle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Math\skVec2.hpp" />
+    <ClInclude Include="src\Collision\Shapes\skBox.hpp" />
+    <ClInclude Include="src\Collision\Shapes\skCircle.hpp" />
   </ItemGroup>
 </Project>
