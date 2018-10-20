@@ -2,6 +2,7 @@
 
 namespace shark
 {
+
 	skCircle::skCircle(const skVec2& position, float radius) :
 	position(position),
 	radius(radius)
@@ -13,4 +14,5 @@ namespace shark
 	radius(0.f)
 	{
 	}
+
 }

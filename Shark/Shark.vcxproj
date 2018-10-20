@@ -139,20 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Collision\skCollisionObject.cpp" />
     <ClCompile Include="src\Collision\skCollisionTests.cpp" />
     <ClCompile Include="src\Collision\Shapes\skBox.cpp" />
     <ClCompile Include="src\Collision\Shapes\skCircle.cpp" />
-    <ClCompile Include="src\Collision\skManifold.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Math\skVec2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Collision\skCollisionObject.hpp" />
     <ClInclude Include="src\Collision\skCollisionTests.hpp" />
     <ClInclude Include="src\Collision\Shapes\skBox.hpp" />
     <ClInclude Include="src\Collision\Shapes\skCircle.hpp" />
-    <ClInclude Include="src\Collision\skManifold.hpp" />
     <ClInclude Include="src\Math\skVec2.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

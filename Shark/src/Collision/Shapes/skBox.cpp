@@ -2,6 +2,7 @@
 
 namespace shark
 {
+
 	skBox::skBox(const skVec2& min, const skVec2& max) :
 	min(min),
 	max(max)
@@ -13,4 +14,5 @@ namespace shark
 	max(0.f)
 	{
 	}
+
 }

@@ -1,18 +1,28 @@
 #pragma once
 
-#include <Collision/skCollisionObject.hpp>
+// Shark
+#include <Math/skVec2.hpp>
 
 namespace shark
 {
-	class skCircle : public skCollisionObject
+
+	class skCircle
 	{
-	public:
-		explicit skCircle(const skVec2& position, float radius);
-		skCircle();
-		~skCircle() = default;
 
 	public:
+
+		///
+		explicit skCircle(const skVec2& position, float radius);
+
+		///
+		skCircle();
+
+		///
+		~skCircle() = default;
+
 		skVec2 position;
 		float radius;
+
 	};
+
 }

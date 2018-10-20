@@ -1,8 +1,11 @@
 #include <Math/skVec2.hpp>
+
+// C++
 #include <math.h>
 
 namespace shark
 {
+
 	skVec2::skVec2(float x) :
 	x(x),
 	y(x)
@@ -31,18 +34,19 @@ namespace shark
 		return x * x + y * y;
 	}
 
-	float skVec2::distance(const skVec2 & v) const
+	float skVec2::distance(const skVec2& v) const
 	{
 		return sqrtf(((x - v.x) * (x - v.x)) + ((y - v.y) * (y - v.y)));
 	}
 
-	float skVec2::distanceSquared(const skVec2 & v) const
+	float skVec2::distanceSquared(const skVec2& v) const
 	{
 		return ((x - v.x) * (x - v.x)) + ((y - v.y) * (y - v.y));
 	}
 
-	float skVec2::dot(const skVec2 & v) const
+	float skVec2::dot(const skVec2& v) const
 	{
 		return x * v.x + y * v.y;
 	}
+
 }

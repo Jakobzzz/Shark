@@ -12,15 +12,11 @@
     <ClCompile Include="src\Collision\Shapes\skBox.cpp" />
     <ClCompile Include="src\Collision\Shapes\skCircle.cpp" />
     <ClCompile Include="src\Collision\skCollisionTests.cpp" />
-    <ClCompile Include="src\Collision\skCollisionObject.cpp" />
-    <ClCompile Include="src\Collision\skManifold.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Math\skVec2.hpp" />
     <ClInclude Include="src\Collision\Shapes\skBox.hpp" />
     <ClInclude Include="src\Collision\Shapes\skCircle.hpp" />
     <ClInclude Include="src\Collision\skCollisionTests.hpp" />
-    <ClInclude Include="src\Collision\skCollisionObject.hpp" />
-    <ClInclude Include="src\Collision\skManifold.hpp" />
   </ItemGroup>
 </Project>

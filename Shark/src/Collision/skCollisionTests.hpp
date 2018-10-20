@@ -2,14 +2,24 @@
 
 namespace shark
 {
-	class skManifold;
+
+	class skBox;
+	class skCircle;
 
 	class skCollisionTests
 	{
-		~skCollisionTests() = default;
 
 	public:
-		bool boxvsBox(skManifold* manifold);
-		bool circlevsCircle(skManifold* manifold);
+
+		///
+		~skCollisionTests() = default;
+
+		///
+		bool boxVsBox(skBox a, skBox b);
+
+		///
+		bool circleVsCircle(skCircle a, skCircle b);
+
 	};
+
 }
