@@ -16,11 +16,11 @@ const float dt = 1.f / 60.f;
 const float speed = 100.f;
 
 // Functions
-void moveCircle(sf::CircleShape& circle);
+void moveShape(sf::Shape* shape);
 
 struct CircleCollShape 
 {
-	sf::CircleShape circle;
+	sf::Shape* circle;
 	skCircle circleBody;
 };
 
@@ -46,8 +46,8 @@ int main()
 	skCircle physB = skCircle(skVec2(350.f, 350.f), 10.f);
 
 	// Place in collision shape
-	CircleCollShape circleA = { a, physA };
-	CircleCollShape circleB = { b, physB };
+	CircleCollShape circleA = { &a, physA };
+	CircleCollShape circleB = { &b, physB };
 
 	while (window.isOpen())
 	{
@@ -59,11 +59,11 @@ int main()
 		}
 
 		// Move circleA with keyboard input
-		moveCircle(circleA.circle);
+		moveShape(circleA.circle);
 
 		// Update position of the physics bodies
-		circleA.circleBody.position = skVec2(circleA.circle.getPosition().x, circleA.circle.getPosition().y);
-		circleB.circleBody.position = skVec2(circleB.circle.getPosition().x, circleB.circle.getPosition().y);
+		circleA.circleBody.position = skVec2(circleA.circle->getPosition().x, circleA.circle->getPosition().y);
+		circleB.circleBody.position = skVec2(circleB.circle->getPosition().x, circleB.circle->getPosition().y);
 
 		// Check for collision
 		if (collResolver.circleVsCircle(circleA.circleBody, circleB.circleBody))
@@ -72,15 +72,15 @@ int main()
 		}
 
 		window.clear();
-		window.draw(circleA.circle);
-		window.draw(circleB.circle);
+		window.draw(*circleA.circle);
+		window.draw(*circleB.circle);
 		window.display();
 	}
 
 	return 0;
 }
 
-void moveCircle(sf::CircleShape& circle)
+void moveShape(sf::Shape* shape)
 {
 	sf::Vector2f movement(0.f, 0.f);
 
@@ -101,5 +101,5 @@ void moveCircle(sf::CircleShape& circle)
 		movement.x -= speed;
 	}
 
-	circle.move(movement * dt);
+	shape->move(movement * dt);
 }

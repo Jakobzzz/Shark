@@ -49,4 +49,9 @@ namespace shark
 		return x * v.x + y * v.y;
 	}
 
+	skVec2 skVec2::normalize() const
+	{
+		return *this * (1.f / this->length());
+	}
+
 }

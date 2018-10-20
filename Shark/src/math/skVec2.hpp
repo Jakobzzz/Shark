@@ -36,6 +36,9 @@ namespace shark
 		float dot(const skVec2& v) const;
 
 		///
+		skVec2 normalize() const;
+
+		///
 		inline skVec2& operator= (const skVec2& rhs) { x = rhs.x; y = rhs.y; return *this; }
 
 		///
